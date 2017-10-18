@@ -34,19 +34,16 @@ namespace test_task
             double res = count_line / con;
             int res_1 = Convert.ToInt32(count_line / con);
             double devi = res - res_1;
-            Console.WriteLine(devi);
-            int chek;
-            if (devi != 0)
-                chek = res_1;
-            else
-                chek = res_1;
+            Console.WriteLine(devi);            
             StreamReader reader = new StreamReader("d:\\text.txt", Encoding.Default);
+            //открываю файл словаря 
             String[] translate = File.ReadAllLines("d:\\trans.txt", Encoding.Default);
-            for (int i = 0; i < chek; i++)
+            for (int i = 0; i < res_1; i++)
             {
                 File.AppendAllText("d:\\index_" + i + ".html", "<meta charset='utf8'>");
                         for (int j = 0; j < con; j++)
                         {
+                            
                              File.AppendAllText("d:\\index_" + i + ".html", reader.ReadLine() + "</br>");
                         }
                         
