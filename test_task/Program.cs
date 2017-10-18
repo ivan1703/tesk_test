@@ -35,10 +35,10 @@ namespace test_task
             String[] translate = File.ReadAllLines("d:\\trans.txt", Encoding.Default);
             for (int i = 0; i < 3; i++)
             {
-                File.AppendAllText("d:\\index_" + i + ".html", "<meta charset='utf8'>");
-                        for (int j = 0; j < con; j++)
+                File.AppendAllText("d:\\index_" + (i+1) + ".html", "<meta charset='utf8'>");
+                        for (int j = 0; j < con; j++) 
                         {
-                             File.AppendAllText("d:\\index_" + i + ".html", reader.ReadLine() + "</br>");
+                             File.AppendAllText("d:\\index_" + (i+1) + ".html", reader.ReadLine() + "</br>");
                     
                         }
                         
