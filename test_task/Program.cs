@@ -27,10 +27,11 @@ namespace test_task
                 System.Diagnostics.Process.GetCurrentProcess().Kill();
             }
              int con = Convert.ToInt32(count);
-            //проверка на ошибки закрнчена................................................................
+            //проверка на ошибки закончена................................................................
             //после проверки открываю потоковое соединение.->.............................................
             //узнаю сколько строк в файле всего(что бы разбить на файлы);
-            int count_line =File.ReadAllLines("d:\\text.txt").Length;
+            double count_line =File.ReadAllLines("d:\\text.txt").Length;
+            double res = count_line / con;
             StreamReader reader = new StreamReader("d:\\text.txt", Encoding.Default);
             String[] translate = File.ReadAllLines("d:\\trans.txt", Encoding.Default);
             for (int i = 0; i < 3; i++)
@@ -44,7 +45,6 @@ namespace test_task
             }
             reader.Close();
             Console.WriteLine();
-            Console.WriteLine("витеееееееекек");
             Console.WriteLine("Файл успешно создан...");
             Console.ReadKey();
 
