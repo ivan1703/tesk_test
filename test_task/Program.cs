@@ -32,9 +32,17 @@ namespace test_task
             //узнаю сколько строк в файле всего(что бы разбить на файлы);
             double count_line =File.ReadAllLines("d:\\text.txt").Length;
             double res = count_line / con;
+            int res_1 = Convert.ToInt32(count_line / con);
+            double devi = res - res_1;
+            Console.WriteLine(devi);
+            int chek;
+            if (devi != 0)
+                chek = res_1;
+            else
+                chek = res_1;
             StreamReader reader = new StreamReader("d:\\text.txt", Encoding.Default);
             String[] translate = File.ReadAllLines("d:\\trans.txt", Encoding.Default);
-            for (int i = 0; i < 3; i++)
+            for (int i = 0; i < chek; i++)
             {
                 File.AppendAllText("d:\\index_" + i + ".html", "<meta charset='utf8'>");
                         for (int j = 0; j < con; j++)
