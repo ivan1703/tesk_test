@@ -44,6 +44,7 @@ namespace test_task
             }
             reader.Close();
             Console.WriteLine();
+            Console.WriteLine("витеееееееекек");
             Console.WriteLine("Файл успешно создан...");
             Console.ReadKey();
 
