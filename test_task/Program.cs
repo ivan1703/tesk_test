@@ -39,6 +39,7 @@ namespace test_task
                         for (int j = 0; j < con; j++)
                         {
                              File.AppendAllText("d:\\index_" + i + ".html", reader.ReadLine() + "</br>");
+                    
                         }
                         
             }
@@ -46,7 +47,6 @@ namespace test_task
             Console.WriteLine();
             Console.WriteLine("Файл успешно создан...");
             Console.ReadKey();
-
         }
     }
 }
