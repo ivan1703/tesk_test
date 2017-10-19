@@ -42,17 +42,27 @@ namespace test_task
                 File.AppendAllText("d:\\index_" + i + ".html", "<html>\n <head>\x0D <meta charset='utf8'> \x0D </head> \x0D <body>");
                         for (int j = 0; j < con; j++)
                         {
-                        
-                        File.AppendAllText("d:\\index_" + i + ".html", reader.ReadLine() + "</br>");
+                    String s = reader.ReadLine();
+                    String[] words = s.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                    File.AppendAllText("d:\\index_" + i + ".html", reader.ReadLine() + "</br>");
+                    foreach (String half in translate)
+                    {
+                        foreach (String life in words)
+                        {
+                            if (half == life)
+                            {
+                                
+                            }
+                            else {
+                                
+                            }
+                        }
+                        }
                     }
                         
             }
 
-            String s = "Иванов Иван Иванович";
-            String[] words = s.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-            // words[0] =="Иванов"
-            // words[1] =="Иван"
-            // words[2] =="Иванович"
+            
             reader.Close();
             Console.WriteLine();
             Console.WriteLine("Файл успешно создан...");
