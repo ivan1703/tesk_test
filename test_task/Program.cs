@@ -7,7 +7,6 @@ using System.IO;
 
 namespace test_task
 {
-    
     class Program
     {
         static void Main(string[] args)
@@ -40,14 +39,20 @@ namespace test_task
             String[] translate = File.ReadAllLines("d:\\trans.txt", Encoding.Default);
             for (int i = 0; i < res_1; i++)
             {
-                File.AppendAllText("d:\\index_" + i + ".html", "<meta charset='utf8'>");
+                File.AppendAllText("d:\\index_" + i + ".html", "<html>\n <head>\x0D <meta charset='utf8'> \x0D </head> \x0D <body>");
                         for (int j = 0; j < con; j++)
                         {
-                            
-                             File.AppendAllText("d:\\index_" + i + ".html", reader.ReadLine() + "</br>");
-                        }
+                        
+                        File.AppendAllText("d:\\index_" + i + ".html", reader.ReadLine() + "</br>");
+                    }
                         
             }
+
+            String s = "Иванов Иван Иванович";
+            String[] words = s.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+            // words[0] =="Иванов"
+            // words[1] =="Иван"
+            // words[2] =="Иванович"
             reader.Close();
             Console.WriteLine();
             Console.WriteLine("Файл успешно создан...");
