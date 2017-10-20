@@ -27,34 +27,34 @@ namespace test_task
             }
              int con = Convert.ToInt32(count);
             //проверка на ошибки закончена................................................................
+
             //после проверки открываю потоковое соединение.->.............................................
+            StreamReader reader = new StreamReader("d:\\text.txt", Encoding.Default);
             //узнаю сколько строк в файле всего(что бы разбить на файлы);
             double count_line =File.ReadAllLines("d:\\text.txt").Length;
             double res = count_line / con;
             int res_1 = Convert.ToInt32(count_line / con);
             double devi = res - res_1;
-            Console.WriteLine(devi);            
-            StreamReader reader = new StreamReader("d:\\text.txt", Encoding.Default);
             //открываю файл словаря 
             String[] translate = File.ReadAllLines("d:\\trans.txt", Encoding.Default);
             for (int i = 0; i < res_1; i++)
             {
-                File.AppendAllText("d:\\index_" + i + ".html", "<html>\n <head>\x0D <meta charset='utf8'> \x0D </head> \x0D <body>");
+                File.AppendAllText("d:\\index_" + i + ".html", "<html> <head> <meta charset='utf8'> </head> <body>");
                         for (int j = 0; j < con; j++)
                         {
                     String s = reader.ReadLine();
                     String[] words = s.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-                    File.AppendAllText("d:\\index_" + i + ".html", reader.ReadLine() + "</br>");
+                    
                     foreach (String half in translate)
                     {
                         foreach (String life in words)
                         {
                             if (half == life)
                             {
-                                
+                                File.AppendAllText("d:\\index_" + i + ".html", reader.ReadLine() + "</br>");
                             }
                             else {
-                                
+                                File.AppendAllText("d:\\index_" + i + ".html", reader.ReadLine() + "</br>");
                             }
                         }
                         }
