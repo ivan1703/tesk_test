@@ -43,22 +43,27 @@ namespace test_task
                         for (int j = 0; j < con; j++)
                         {
                     String s = reader.ReadLine();
+                    if (j != 0) {
+                        File.AppendAllText("d:\\index_" + i + ".html", "</br>");
+                    }
                     String[] words = s.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
                     
-                    foreach (String half in translate)
+
+
+                    foreach (String life in words)
                     {
-                        foreach (String life in words)
+                        foreach (String half in translate)
                         {
                             if (half == life)
                             {
-                                File.AppendAllText("d:\\index_" + i + ".html", reader.ReadLine() + "</br>");
-                            }
-                            else {
-                                File.AppendAllText("d:\\index_" + i + ".html", reader.ReadLine() + "</br>");
+                                File.AppendAllText("d:\\index_" + i + ".html", " <i><b>" + life + "</i></b> ");
+                                break;
+
                             }
                         }
-                        }
+                        File.AppendAllText("d:\\index_" + i + ".html", " " + life + " ");
                     }
+                }
                         
             }
 
