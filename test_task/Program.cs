@@ -46,6 +46,16 @@ namespace test_task
                     if (j != 0) {
                         File.AppendAllText("d:\\index_" + i + ".html", "</br>");
                     }
+                    try
+                    {
+                        String[] wordsa = s.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                    }
+                    catch (Exception) {
+                        Console.WriteLine("ошибка ввода попробуйте другое значение");
+                        Console.ReadKey();
+                        System.Diagnostics.Process.GetCurrentProcess().Kill();
+                        
+                    }
                     String[] words = s.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
 
                     String q = "";
