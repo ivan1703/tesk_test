@@ -47,8 +47,8 @@ namespace test_task
                         File.AppendAllText("d:\\index_" + i + ".html", "</br>");
                     }
                     String[] words = s.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
-                    
 
+                    String q = "";
 
                     foreach (String life in words)
                     {
@@ -57,11 +57,16 @@ namespace test_task
                             if (half == life)
                             {
                                 File.AppendAllText("d:\\index_" + i + ".html", " <i><b>" + life + "</i></b> ");
+                                q = half;
                                 break;
-
+                                
                             }
                         }
-                        File.AppendAllText("d:\\index_" + i + ".html", " " + life + " ");
+                        if (q != life)
+                        {
+                            File.AppendAllText("d:\\index_" + i + ".html", " " + life + " ");
+                        }
+                        
                     }
                 }
                         
